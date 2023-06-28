@@ -401,7 +401,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.649
+  m_FillAmount: 0.509
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -1698,12 +1698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionText: {fileID: 1042166991}
-  problem:
-  - {fileID: 11400000, guid: fb74b81a93a11054f9c67dec2c9673d8, type: 2}
-  - {fileID: 11400000, guid: c80b9346ae78b3841a8ef74b4e5944ee, type: 2}
-  - {fileID: 11400000, guid: d3ed67cc626d34c4d8a532b31c7f2a7e, type: 2}
-  - {fileID: 11400000, guid: e48e617aa2dca6046a7ab4ba2ee6f9ae, type: 2}
-  - {fileID: 11400000, guid: 399b132a8615a584da76f31862c01a91, type: 2}
+  questions: []
   answerButtons:
   - {fileID: 1909780640}
   - {fileID: 429607465}

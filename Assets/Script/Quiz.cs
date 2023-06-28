@@ -44,7 +44,7 @@ public class Quiz : MonoBehaviour
             GetNextQuestion();
             timer.loadNextQuestion = false;
         }
-        else if(!hasAnsweredEarly && !timer.isAnswerningQuestion)
+        else if(!hasAnsweredEarly && !timer.isAnswerningQuestions)
         {
             DisplayAnswer(-1);
             SetButtonState(false);
