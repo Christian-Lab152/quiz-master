@@ -85,7 +85,7 @@ public class Quiz : MonoBehaviour
     {
                 Image buttonImage;
        
-        if(index = currentQuestion.GetCorrectAnswerIndex())
+        if(index == currentQuestion.GetCorrectAnswerIndex())
         {
             questionText.text = "Correct!";
             buttonImage = answerButtons[index].GetComponent<Image>();

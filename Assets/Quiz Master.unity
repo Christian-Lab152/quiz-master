@@ -1593,6 +1593,7 @@ GameObject:
   - component: {fileID: 1671888248}
   - component: {fileID: 1671888247}
   - component: {fileID: 1671888251}
+  - component: {fileID: 1671888252}
   m_Layer: 5
   m_Name: QizCanvas
   m_TagString: Untagged
@@ -1707,6 +1708,23 @@ MonoBehaviour:
   defaultAnswerSprite: {fileID: 21300000, guid: 631c88bde9310ad4bbe6bea26127a2fc, type: 3}
   correctAnswerSprite: {fileID: 21300000, guid: b9b5b73871defd246a05ec3ae44d9ddd, type: 3}
   timerImage: {fileID: 506540370}
+--- !u!114 &1671888252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671888246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3842757c1b2d1444898d3cdbed90ac44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToCompleteQuestion: 10
+  timeToShowCorrectAnswer: 5
+  loadNextQuestion: 1
+  fillFraction: 0
+  isAnswerningQuestions: 1
 --- !u!1 &1748722420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4474879012766279057, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
