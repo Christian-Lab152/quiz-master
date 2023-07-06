@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
-{
+{   
     [Header("Questions")]
     [SerializeField]TextMeshProUGUI questionText;
     [SerializeField] List<QuestionSO> questions = new List<QuestionSO>();
@@ -26,12 +26,19 @@ public class Quiz : MonoBehaviour
 
     [Header("Scoring")]
     [SerializeField] TextMeshProUGUI scoreText;
-    Scorekepper scorekepper; 
+    ScoreKeeper scoreKeeper; 
 
     void Start()
     {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
         timer = FindObjectOfType<Timer>();
-        scorekepper = FindObjectOfType<Scorekepper>();
+        questionText.text = currentQuestion.GetQuestion();
+
+        for(int i = 0; i < answerButtons.Length; i++)
+        {
+            TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = currentQuestion.GetAnswer(i);
+        }
     }
 
     void Update()
@@ -56,6 +63,7 @@ public class Quiz : MonoBehaviour
         DisplayAnswer(index);
         SetButtonState(false);
         timer.CancelTimer();
+        scoreText.text = "Score: " + scoreKeeper.CalculateScore() + "%";
     }
 
 
@@ -67,6 +75,7 @@ public class Quiz : MonoBehaviour
         SetDeFaultButtonSprites();
         GetRandomQuestion();
         DisplayQuestion();
+        scoreKeeper.IncrementQuestionstSeen();
         }
     }
 
@@ -89,7 +98,7 @@ public class Quiz : MonoBehaviour
             questionText.text = "Correct!";
             buttonImage = answerButtons[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
-            scorekepper.IncrementCorrectAnswers();
+            scoreKeeper.IncrementCorrectAnswers();
         }
 
         else
