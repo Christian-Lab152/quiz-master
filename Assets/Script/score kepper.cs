@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scorekepper : MonoBehaviour
+public class ScoreKeeper : MonoBehaviour
 {
     int correctAnswers = 0;
     int questionsSeen = 0;
