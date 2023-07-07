@@ -594,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 631c88bde9310ad4bbe6bea26127a2fc, type: 3}
+    - target: {fileID: 6628880165869392582, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7639688670547745051, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -733,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345576439223093721, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6345576439223093721, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -854,7 +858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &722013082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345576439223093721, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6345576439223093721, guid: ef255d2a05cbe164dbf20ad8564812ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1728,6 +1732,7 @@ MonoBehaviour:
   defaultAnswerSprite: {fileID: 21300000, guid: 631c88bde9310ad4bbe6bea26127a2fc, type: 3}
   correctAnswerSprite: {fileID: 21300000, guid: b9b5b73871defd246a05ec3ae44d9ddd, type: 3}
   timerImage: {fileID: 506540370}
+  scoreText: {fileID: 1894849021}
 --- !u!114 &1671888252
 MonoBehaviour:
   m_ObjectHideFlags: 0
