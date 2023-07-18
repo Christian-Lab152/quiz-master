@@ -36,6 +36,8 @@ public class Quiz : MonoBehaviour
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         timer = FindObjectOfType<Timer>();
         questionText.text = currentQuestion.GetQuestion();
+        ProgressBar.maxValue = questions.Count;
+        ProgressBar.Value = 0;   
 
         for(int i = 0; i < answerButtons.Length; i++)
         {
@@ -78,6 +80,7 @@ public class Quiz : MonoBehaviour
         SetDeFaultButtonSprites();
         GetRandomQuestion();
         DisplayQuestion();
+        ProgressBar.Value++;
         scoreKeeper.IncrementQuestionstSeen();
         }
     }
