@@ -22,7 +22,7 @@ public class ScoreKeeper : MonoBehaviour
         return questionsSeen;
     }
 
-    public void IncrementQuestionstSeen()
+    public void IncrementQuestionsSeen()
     {
         questionsSeen++;
     }
