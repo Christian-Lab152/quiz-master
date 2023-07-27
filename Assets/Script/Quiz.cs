@@ -7,18 +7,18 @@ using UnityEngine.UI;
 public class Quiz : MonoBehaviour
 {   
     [Header("Questions")]
-    [SerializeField]TextMeshProUGUI questionText;
+    [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] List<QuestionSO> questions = new List<QuestionSO>();
     QuestionSO currentQuestion;
 
     [Header("Answers")]
-    [SerializeField]GameObject[] answerButtons;
+    [SerializeField] GameObject[] answerButtons;
     int correctAnswerIndex;
     bool hasAnsweredEarly;
 
     [Header("Button Colors")]
-    [SerializeField]Sprite defaultAnswerSprite;
-    [SerializeField]Sprite correctAnswerSprite;
+    [SerializeField] Sprite defaultAnswerSprite;
+    [SerializeField] Sprite correctAnswerSprite;
 
     [Header("Timer")] 
     [SerializeField] Image timerImage;
@@ -38,7 +38,8 @@ public class Quiz : MonoBehaviour
         timer = FindObjectOfType<Timer>();
         questionText.text = currentQuestion.GetQuestion();
         ProgressBar.maxValue = questions.Count;
-        ProgressBar.value = 0;   
+        ProgressBar.value = 0;  
+        scoreKeeper = FindObjectOfType<ScoreKeeper>(); 
     }
 
     void Update()
@@ -64,11 +65,6 @@ public class Quiz : MonoBehaviour
         SetButtonState(false);
         timer.CancelTimer();
         scoreText.text = "Score: " + scoreKeeper.CalculateScore() + "%";
-
-        if(ProgressBar.value == ProgressBar.maxValue)
-        {
-            isComplete = true;
-        }
     }
 
 
@@ -80,7 +76,6 @@ public class Quiz : MonoBehaviour
         SetDeFaultButtonSprites();
         GetRandomQuestion();
         DisplayQuestion();
-        ProgressBar.value++;
         scoreKeeper.IncrementQuestionsSeen();
         }
     }
@@ -106,7 +101,6 @@ public class Quiz : MonoBehaviour
             buttonImage.sprite = correctAnswerSprite;
             scoreKeeper.IncrementCorrectAnswers();
         }
-
         else
         {
             correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();

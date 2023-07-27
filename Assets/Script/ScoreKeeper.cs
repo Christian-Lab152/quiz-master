@@ -6,8 +6,8 @@ public class ScoreKeeper : MonoBehaviour
 {
     int correctAnswers = 0;
     int questionsSeen = 0;
-    
-    public int GetCorrectAnswer()
+
+    public int GetCorrectAnswers()
     {
         return correctAnswers;
     }

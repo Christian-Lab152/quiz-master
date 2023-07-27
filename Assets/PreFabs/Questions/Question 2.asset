@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b607eb78a1aa1fe469d22bb4286ba0d9, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
-  question: Enter new question text here
+  question: how will i die
+  answers:
+  - from a plane crash
+  - a random shark attack
+  - a carnival ride
+  - starvation
+  correctAnswerIndex: 1

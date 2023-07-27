@@ -16,6 +16,6 @@ MonoBehaviour:
   answers:
   - 4 billion
   - 3.645 trillion
-  - 8 billion
   - 7.29 trillion
-  correctAnswerIndex: 2
+  - 8 billion
+  correctAnswerIndex: 3
