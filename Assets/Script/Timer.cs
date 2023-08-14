@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float timeToCompleteQuestion = 30f;
-    [SerializeField] float timeToShowCorrectAnswer = 10f;
+    [SerializeField] float timeToCompleteQuestion = 15f;
+    [SerializeField] float timeToShowCorrectAnswer = 5f;
     
     public bool loadNextQuestion;
     public float fillFraction;
     public bool isAnswerningQuestions;
     float timerValue;
     
-    // Update is called once per frame
     void Update()
     {
         UpdateTimer();
@@ -51,7 +50,6 @@ public class Timer : MonoBehaviour
                 loadNextQuestion = true;
             }
         }
-        
         Debug.Log(isAnswerningQuestions + ": " + timerValue + " = " + fillFraction);
     }
 }

@@ -42,6 +42,26 @@ public class Quiz : MonoBehaviour
         scoreKeeper = FindObjectOfType<ScoreKeeper>(); 
     }
 
+    void DisplayQuestion()
+    {
+        questionText.text = currentQuestion.GetQuestion();
+
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = currentQuestion.GetAnswer(i); 
+        }
+    }   
+
+        void SetButtonState(bool state)
+    {
+        for(int i = 0; i < answerButtons.Length; i++)
+        {
+            Button button = answerButtons[i].GetComponent<Button>();
+            button.interactable = state;
+        }
+    }
+
     void Update()
     {
         timerImage.fillAmount = timer.fillFraction;
@@ -64,20 +84,6 @@ public class Quiz : MonoBehaviour
         DisplayAnswer(index);
         SetButtonState(false);
         timer.CancelTimer();
-        scoreText.text = "Score: " + scoreKeeper.CalculateScore() + "%";
-    }
-
-
-    void GetNextQuestion()
-    {  
-        if (questions.Count > 0)
-        {
-        SetButtonState(true);
-        SetDeFaultButtonSprites();
-        GetRandomQuestion();
-        DisplayQuestion();
-        scoreKeeper.IncrementQuestionsSeen();
-        }
     }
 
     void GetRandomQuestion()
@@ -111,24 +117,15 @@ public class Quiz : MonoBehaviour
         }
     }
 
-
-    void DisplayQuestion()
-    {
-        questionText.text = currentQuestion.GetQuestion();
-
-        for (int i = 0; i < answerButtons.Length; i++)
+     void GetNextQuestion()
+    {  
+        if (questions.Count > 0)
         {
-            TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = currentQuestion.GetAnswer(i); 
-        }
-    }   
-
-    void SetButtonState(bool state)
-    {
-        for(int i = 0; i < answerButtons.Length; i++)
-        {
-            Button button = answerButtons[i].GetComponent<Button>();
-            button.interactable = state;
+        SetButtonState(true);
+        SetDeFaultButtonSprites();
+        GetRandomQuestion();
+        DisplayQuestion();
+        scoreKeeper.IncrementQuestionsSeen();
         }
     }
 
