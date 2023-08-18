@@ -36,7 +36,6 @@ public class Quiz : MonoBehaviour
     void Start()
     {
         timer = FindObjectOfType<Timer>();
-        questionText.text = currentQuestion.GetQuestion();
         progressBar.maxValue = questions.Count;
         progressBar.value = 0;  
         scoreKeeper = FindObjectOfType<ScoreKeeper>(); 
